@@ -1,0 +1,35 @@
+How does Map work???
+
+Map is used to change or remap a particular number. 
+As we need different numbers which will lead to various (r,b,g) combinations. 
+We used this method to gerenate remapped numbers for r,b,g so that we can change the background colours.
+
+Map() :
+
+      Syntax: map(value, start1, stop1, start2, stop2, [withinBounds])
+      
+      Parameters:
+          
+          value Number: the incoming value to be converted
+          start1 Number: lower bound of the value's current range
+          stop1 Number: upper bound of the value's current range
+          start2 Number: lower bound of the value's target range
+          stop2 Number: upper bound of the value's target range
+          withinBounds Boolean: constrain the value to the newly mapped range (Optional)
+  
+      Reference Examples : 
+  
+            function setup() {
+              noStroke();
+            }
+
+            function draw() {
+              background(204);
+              let x1 = map(mouseX, 0, width, 25, 75);
+              ellipse(x1, 25, 25, 25);
+              //This ellipse is constrained to the 0-100 range
+              //after setting withinBounds to true
+              let x2 = map(mouseX, 0, width, 0, 100, true);
+              ellipse(x2, 75, 25, 25);
+            }
+            
